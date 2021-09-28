@@ -7,8 +7,8 @@ namespace Lib
 {
     public class Context : DbContext
     {
-        public DbSet<Blog> Blogs {get;set;}
-        public DbSet<Post> Posts {get;set;}
+        public DbSet<Checking> CheckingAccounts {get;set;}
+        public DbSet<Bank> Bank {get;set;}
         
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
