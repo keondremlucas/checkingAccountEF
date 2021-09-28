@@ -1,0 +1,5 @@
+Create a DB
+1. Create a migration file
+2. update the database with migration file
+3. make changes to c# code
+4. update database
