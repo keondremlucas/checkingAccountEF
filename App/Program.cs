@@ -20,13 +20,13 @@ namespace app
       db.Add(Checking);
       Console.WriteLine($"blog add state : {db.Entry(Checking).State}");
       db.SaveChanges();
-      Checking.Balance += 100;
+      Checking.Deposit(100);
       Bank.receipt = "Deposited $100";
       db.Update(Checking);
       db.Add(Bank);
       db.SaveChanges();
-      Checking.Balance -= 400;
-      Bank.receipt = "Withdrew $400";
+      Checking.Withdraw(400);
+      Bank.receipt = "Withdraw $400";
       db.Update(Checking);
       db.Update(Bank);
       db.SaveChanges();
