@@ -5,7 +5,7 @@ namespace Lib
     public class Bank
     {
         public int Id{get; set;}
-        public List<Checking> CheckingAccounts {get; set;} 
+        public string receipt {get;set;}
         // public List<int> Owners {get; set;}
 
         // public Bank(int id)

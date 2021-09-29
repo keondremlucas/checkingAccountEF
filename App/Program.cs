@@ -13,12 +13,24 @@ namespace app
       using var db = new Context();
 
       // Create
-      Console.WriteLine("Inserting a new blog");
-      var blog = new Blog { Url = "http://wowblog.com/" };
-      Console.WriteLine($"blog before state : {db.Entry(blog).State}");
-      db.Add(blog);
-      Console.WriteLine($"blog add state : {db.Entry(blog).State}");
+      Console.WriteLine("Inserting a new Account");
+      var Checking = new Checking { Owner = "Dre", Balance = 1000 };
+      var Bank = new Bank {receipt = "New Account Created"};
+      Console.WriteLine($"blog before state : {db.Entry(Checking).State}");
+      db.Add(Checking);
+      Console.WriteLine($"blog add state : {db.Entry(Checking).State}");
       db.SaveChanges();
+      Checking.Balance += 100;
+      Bank.receipt = "Deposited $100";
+      db.Update(Checking);
+      db.Add(Bank);
+      db.SaveChanges();
+      Checking.Balance -= 400;
+      Bank.receipt = "Withdrew $400";
+      db.Update(Checking);
+      db.Update(Bank);
+      db.SaveChanges();
+  
       // Console.WriteLine($"blog after state : {db.Entry(blog).State}");
 
       // // Read
